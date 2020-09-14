@@ -53,7 +53,7 @@ public:
 			b->Print();
 		}
 	}
-	void Get_Instatnce(Base* bind)
+	void Lock_Get_Instatnce(Base* bind)
 	{
 		for (auto& b : binds)
 		{
@@ -78,13 +78,8 @@ int main()
 	test.AddBind(&thr);
 	test.AddBind(&fort);
 	test.test_Print();
-	test.Get_Instatnce(&thr);
-	test.Get_Instatnce(&fort);
-	test.Get_Instatnce(&fir);
-
-	// spawn 10 threads to fill the linked list:
-//std::vector<std::thread> threads;
-//for (int i = 0; i < 20; ++i) threads.push_back(std::thread(Increase, ref()));
-//for (auto& th : threads) th.join();
+	test.Lock_Get_Instatnce(&thr);
+	test.Lock_Get_Instatnce(&fort);
+	test.Lock_Get_Instatnce(&fir);
 	return 0;
 }
